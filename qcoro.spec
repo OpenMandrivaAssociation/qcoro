@@ -50,7 +50,7 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %endif
     -DQCORO_ENABLE_ASAN:BOOL=OFF \
     -DQCORO_WITH_QTDBUS:BOOL=ON \
-    -DQCORO_WITH_QTNETWORK:BOOL=ON \
+    -DQCORO_WITH_QTNETWORK:BOOL=ON
 %make_build
 
 %install
