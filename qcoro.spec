@@ -1,6 +1,6 @@
-%undefine __cmake_in_source_build
+#undefine __cmake_in_source_build
 %global appname QCoro
-%global tests 1
+%global tests 0
 
 Name: qcoro
 Version: 0.3.0
