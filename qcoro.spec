@@ -19,7 +19,7 @@ BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake
 BuildRequires: ninja
-
+BuildRequires: qmake5
 %if 0%{?tests}
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5Test)
