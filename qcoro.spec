@@ -2,6 +2,9 @@
 %global appname QCoro
 %global tests 0
 
+
+%global optflags %{optflags} -pthread
+
 Name: qcoro
 Version: 0.3.0
 Release: 1
