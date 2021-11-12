@@ -44,7 +44,7 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %build
 export CC=gcc
 export CXX=g++
-%cmake -G Ninja \
+%cmake  \
     -DCMAKE_BUILD_TYPE=Release \
     -DUSE_QT_VERSION:STRING=5 \
 %if 0%{?tests}
@@ -57,10 +57,10 @@ export CXX=g++
     -DQCORO_ENABLE_ASAN:BOOL=OFF \
     -DQCORO_WITH_QTDBUS:BOOL=ON \
     -DQCORO_WITH_QTNETWORK:BOOL=ON
-%ninja_build -C build
+%make_build
 
 %install
-%ninja_install -C build
+%make_install -C build
 
 %if 0%{?tests}
 %check
