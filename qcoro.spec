@@ -57,10 +57,10 @@ export CXX=g++
     -DQCORO_ENABLE_ASAN:BOOL=OFF \
     -DQCORO_WITH_QTDBUS:BOOL=ON \
     -DQCORO_WITH_QTNETWORK:BOOL=ON
-%make_build
+%ninja_build
 
 %install
-%make_install -C build
+%ninja_install
 
 %if 0%{?tests}
 %check
