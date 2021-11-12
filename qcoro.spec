@@ -41,6 +41,8 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %autosetup -p1
 
 %build
+export CC=gcc
+export CXX=g++
 %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DUSE_QT_VERSION:STRING=5 \
