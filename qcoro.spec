@@ -16,6 +16,7 @@ Source0: https://github.com/danvratil/qcoro/archive/v%{version}/%{name}-%{versio
 
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
+BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake
 BuildRequires: ninja
