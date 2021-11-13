@@ -1,9 +1,9 @@
-#undefine __cmake_in_source_build
-%global appname QCoro
-%global tests 0
+%define major 0
+# Mandriva suffix
+%define libname %mklibname %{name} %{major}
+%define devname %mklibname %{name} -d
 
-
-%global optflags %{optflags} -pthread
+%global oname QCoro
 
 Name: qcoro
 Version: 0.3.0
@@ -21,39 +21,41 @@ BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake
 BuildRequires: ninja
 BuildRequires: qmake5
-%if 0%{?tests}
-BuildRequires: cmake(Qt5Concurrent)
-BuildRequires: cmake(Qt5Test)
-BuildRequires: dbus-x11
-%endif
 
 %description
 The QCoro library provides set of tools to make use of the C++20 coroutines
 in connection with certain asynchronous Qt actions.
 
-%package devel
-Summary: Development files for %{name}
-Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
+%package -n %{libname}
+Summary:	The QCoro library
+Group:		System/Libraries
+Provides:   qcoro
+Provides:   QCoro
 
-%description devel
-%{summary}.
+%description -n %{libname}
+The QCoro library provides set of tools to make use of the C++20 coroutines
+in connection with certain asynchronous Qt actions.
+
+%package -n %{devname}
+Summary: Development files for %{name}
+Requires:	%{libname} = %{version}-%{release}
+
+%description -n %{devname}
+Development files for QCoro library.
 
 %prep
 %autosetup -p1
 
 %build
+# GCC is needed on Cooker or on Clang can't find "threads"
+# Reported to upstream: 
 export CC=gcc
 export CXX=g++
 %cmake  \
     -DCMAKE_BUILD_TYPE=Release \
     -DUSE_QT_VERSION:STRING=5 \
-%if 0%{?tests}
-    -DBUILD_TESTING:BOOL=ON \
-    -DQCORO_BUILD_EXAMPLES:BOOL=ON \
-%else
     -DBUILD_TESTING:BOOL=OFF \
     -DQCORO_BUILD_EXAMPLES:BOOL=OFF \
-%endif
     -DQCORO_ENABLE_ASAN:BOOL=OFF \
     -DQCORO_WITH_QTDBUS:BOOL=ON \
     -DQCORO_WITH_QTNETWORK:BOOL=ON \
@@ -63,18 +65,13 @@ export CXX=g++
 %install
 %make_install -C build
 
-%if 0%{?tests}
-%check
-%ctest
-%endif
+%files -n %{libname}
+%{_libdir}/lib%{appname}*.so.%{major}*
 
-%files
+%files -n %{devname}
 %doc README.md
 %license LICENSES/*
-%{_libdir}/lib%{appname}*.so.0*
-
-%files devel
-%{_includedir}/%{appname}/
+%{_includedir}/%{oname}/
 %{_includedir}/%{name}/
-%{_libdir}/cmake/%{appname}/
-%{_libdir}/lib%{appname}*.so
+%{_libdir}/cmake/%{oname}/
+%{_libdir}/lib%{oname}*.so
