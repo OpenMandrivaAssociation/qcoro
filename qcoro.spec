@@ -66,7 +66,7 @@ export CXX=g++
 %make_install -C build
 
 %files -n %{libname}
-%{_libdir}/lib%{appname}*.so.%{major}*
+%{_libdir}/lib%{oname}*.so.%{major}*
 
 %files -n %{devname}
 %doc README.md
