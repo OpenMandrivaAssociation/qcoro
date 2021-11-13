@@ -48,7 +48,7 @@ Development files for QCoro library.
 
 %build
 # GCC is needed on Cooker or on Clang can't find "threads"
-# Reported to upstream: 
+# Reported to upstream: https://github.com/danvratil/qcoro/issues/22
 export CC=gcc
 export CXX=g++
 %cmake  \
