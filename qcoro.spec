@@ -6,7 +6,7 @@
 %global oname QCoro
 
 Name: qcoro
-Version: 0.3.0
+Version: 0.4.0
 Release: 1
 Group:   System/Libraries
 License: MIT
