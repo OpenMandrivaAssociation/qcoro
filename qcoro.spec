@@ -74,6 +74,7 @@ Development files for QCoro library.
 %{_includedir}/qcoro5/QCoro/
 %{_includedir}/qcoro5/qcoro/
 %{_libdir}/cmake/QCoro5/
+%{_libdir}/cmake/QCoro5Coro/
 %{_libdir}/cmake/QCoro5Core/
 %{_libdir}/cmake/QCoro5DBus/
 %{_libdir}/cmake/QCoro5Network/
