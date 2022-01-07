@@ -71,7 +71,7 @@ export CXX=g++
 %files -n %{devname}
 %doc README.md
 %license LICENSES/*
-%{_includedir}/%{oname}/
-%{_includedir}/%{name}/
-%{_libdir}/cmake/%{oname}/
+#{_includedir}/%{oname}/
+#{_includedir}/%{name}/
+#{_libdir}/cmake/%{oname}/
 %{_libdir}/lib%{oname}*.so
