@@ -37,6 +37,7 @@ BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: qmake-qt6
+BuildRequires: qt6-cmake
 %endif
 
 %description
@@ -81,6 +82,7 @@ Development files for QCoro library for Qt 6.x
 
 %prep
 %autosetup -p1
+%if %{with qt5}
 %cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DUSE_QT_VERSION:STRING=5 \
@@ -92,7 +94,9 @@ Development files for QCoro library for Qt 6.x
 	-DOpenGL_GL_PREFERENCE=GLVND \
 	-G Ninja
 cd ..
+%endif
 
+%if %{with qt6}
 CMAKE_BUILD_DIR=build-qt6 %cmake \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DUSE_QT_VERSION:STRING=6 \
@@ -103,6 +107,7 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 	-DQCORO_WITH_QTNETWORK:BOOL=ON \
 	-DOpenGL_GL_PREFERENCE=GLVND \
 	-G Ninja
+%endif
 
 %build
 %if %{with qt5}
