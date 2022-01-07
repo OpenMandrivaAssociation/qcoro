@@ -49,8 +49,8 @@ Development files for QCoro library.
 %build
 # GCC is needed on Cooker or on Clang can't find "threads"
 # Reported to upstream: https://github.com/danvratil/qcoro/issues/22
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %cmake  \
     -DCMAKE_BUILD_TYPE=Release \
     -DUSE_QT_VERSION:STRING=5 \
@@ -71,7 +71,10 @@ export CXX=g++
 %files -n %{devname}
 %doc README.md
 %license LICENSES/*
-#{_includedir}/%{oname}/
-#{_includedir}/%{name}/
-#{_libdir}/cmake/%{oname}/
+%{_includedir}/qcoro5/QCoro/
+%{_includedir}/qcoro5/qcoro/
+%{_libdir}/cmake/QCoro5/
+%{_libdir}/cmake/QCoro5Core/
+%{_libdir}/cmake/QCoro5DBus/
+%{_libdir}/cmake/QCoro5Network/
 %{_libdir}/lib%{oname}*.so
