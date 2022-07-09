@@ -36,6 +36,7 @@ BuildRequires: qmake5
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)
+BuildRequires: cmake(Qt6WebSockets)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: qmake-qt6
 BuildRequires: qt6-cmake
