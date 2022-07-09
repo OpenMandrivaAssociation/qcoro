@@ -12,7 +12,7 @@
 %global oname QCoro
 
 Name: qcoro
-Version: 0.4.0
+Version: 0.6.0
 Release: 1
 Group:   System/Libraries
 License: MIT
@@ -27,6 +27,7 @@ BuildRequires: ninja
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5WebSockets)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: qmake5
 %endif
@@ -35,6 +36,7 @@ BuildRequires: qmake5
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)
+BuildRequires: cmake(Qt6WebSockets)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: qmake-qt6
 BuildRequires: qt6-cmake
@@ -141,7 +143,13 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro5Core/
 %{_libdir}/cmake/QCoro5DBus/
 %{_libdir}/cmake/QCoro5Network/
+%{_libdir}/cmake/QCoro5WebSockets/
 %{_libdir}/libQCoro5*.so
+%{_prefix}/mkspecs/modules/qt_QCoroCore.pri
+%{_prefix}/mkspecs/modules/qt_QCoroCoro.pri
+%{_prefix}/mkspecs/modules/qt_QCoroDBus.pri
+%{_prefix}/mkspecs/modules/qt_QCoroNetwork.pri
+%{_prefix}/mkspecs/modules/qt_QCoroWebSockets.pri
 %endif
 
 %if %{with qt6}
@@ -158,5 +166,6 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro6Core/
 %{_libdir}/cmake/QCoro6DBus/
 %{_libdir}/cmake/QCoro6Network/
+%{_libdir}/cmake/QCoro6WebSockets/
 %{_libdir}/libQCoro6*.so
 %endif
