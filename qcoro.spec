@@ -27,6 +27,7 @@ BuildRequires: ninja
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5WebSockets)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: qmake5
 %endif
