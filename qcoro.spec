@@ -22,6 +22,8 @@ Source0: https://github.com/danvratil/qcoro/archive/v%{version}/%{name}-%{versio
 
 BuildRequires: cmake
 BuildRequires: ninja
+BuildRequires: pkgconfig(xkbcommon)
+BuildRequires: pkgconfig(xkbcommon-x11)
 
 %if %{with qt5}
 BuildRequires: cmake(Qt5Core)
@@ -38,6 +40,7 @@ BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Quick)
+BuildRequires: cmake(Qt6Qml)
 BuildRequires: cmake(Qt6Network)
 BuildRequires: cmake(Qt6WebSockets)
 BuildRequires: cmake(Qt6Widgets)
