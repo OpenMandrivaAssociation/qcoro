@@ -36,6 +36,7 @@ BuildRequires: qmake5
 %if %{with qt6}
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
+BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6Network)
 BuildRequires: cmake(Qt6WebSockets)
