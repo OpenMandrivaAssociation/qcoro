@@ -12,7 +12,7 @@
 %global oname QCoro
 
 Name: qcoro
-Version: 0.6.0
+Version: 0.7.0
 Release: 1
 Group:   System/Libraries
 License: MIT
@@ -22,10 +22,13 @@ Source0: https://github.com/danvratil/qcoro/archive/v%{version}/%{name}-%{versio
 
 BuildRequires: cmake
 BuildRequires: ninja
+BuildRequires: pkgconfig(xkbcommon)
+BuildRequires: pkgconfig(xkbcommon-x11)
 
 %if %{with qt5}
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
+BuildRequires: cmake(Qt5Quick)
 BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5WebSockets)
 BuildRequires: cmake(Qt5Widgets)
@@ -35,7 +38,11 @@ BuildRequires: qmake5
 %if %{with qt6}
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
+BuildRequires: cmake(Qt6Gui)
+BuildRequires: cmake(Qt6Quick)
+BuildRequires: cmake(Qt6Qml)
 BuildRequires: cmake(Qt6Network)
+BuildRequires: cmake(Qt6OpenGL)
 BuildRequires: cmake(Qt6WebSockets)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: qmake-qt6
@@ -142,12 +149,16 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro5Coro/
 %{_libdir}/cmake/QCoro5Core/
 %{_libdir}/cmake/QCoro5DBus/
+%{_libdir}/cmake/QCoro5Qml/
+%{_libdir}/cmake/QCoro5Quick/
 %{_libdir}/cmake/QCoro5Network/
 %{_libdir}/cmake/QCoro5WebSockets/
 %{_libdir}/libQCoro5*.so
 %{_prefix}/mkspecs/modules/qt_QCoroCore.pri
 %{_prefix}/mkspecs/modules/qt_QCoroCoro.pri
 %{_prefix}/mkspecs/modules/qt_QCoroDBus.pri
+%{_prefix}/mkspecs/modules/qt_QCoroQml.pri
+%{_prefix}/mkspecs/modules/qt_QCoroQuick.pri
 %{_prefix}/mkspecs/modules/qt_QCoroNetwork.pri
 %{_prefix}/mkspecs/modules/qt_QCoroWebSockets.pri
 %endif
@@ -165,6 +176,8 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro6Coro/
 %{_libdir}/cmake/QCoro6Core/
 %{_libdir}/cmake/QCoro6DBus/
+%{_libdir}/cmake/QCoro6Qml/
+%{_libdir}/cmake/QCoro6Quick/
 %{_libdir}/cmake/QCoro6Network/
 %{_libdir}/cmake/QCoro6WebSockets/
 %{_libdir}/libQCoro6*.so
