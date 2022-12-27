@@ -26,6 +26,7 @@ BuildRequires: ninja
 %if %{with qt5}
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
+BuildRequires: cmake(Qt5Quick)
 BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5WebSockets)
 BuildRequires: cmake(Qt5Widgets)
