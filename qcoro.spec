@@ -42,6 +42,7 @@ BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6Qml)
 BuildRequires: cmake(Qt6Network)
+BuildRequires: cmake(Qt6OpenGL)
 BuildRequires: cmake(Qt6WebSockets)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: qmake-qt6
