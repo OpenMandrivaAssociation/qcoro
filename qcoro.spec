@@ -13,7 +13,7 @@
 
 Name: qcoro
 Version: 0.8.0
-Release: 1
+Release: 2
 Group:   System/Libraries
 License: MIT
 Summary: C++ Coroutines for Qt
