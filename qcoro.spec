@@ -155,6 +155,7 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro5Quick/
 %{_libdir}/cmake/QCoro5Network/
 %{_libdir}/cmake/QCoro5WebSockets/
+%{_libdir}/cmake/QCoro5Test/
 %{_libdir}/libQCoro5*.so
 %{_prefix}/mkspecs/modules/qt_QCoroCore.pri
 %{_prefix}/mkspecs/modules/qt_QCoroCoro.pri
@@ -182,5 +183,6 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro6Quick/
 %{_libdir}/cmake/QCoro6Network/
 %{_libdir}/cmake/QCoro6WebSockets/
+%{_libdir}/cmake/QCoro6Test/
 %{_libdir}/libQCoro6*.so
 %endif
