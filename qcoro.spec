@@ -164,6 +164,7 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_prefix}/mkspecs/modules/qt_QCoroQuick.pri
 %{_prefix}/mkspecs/modules/qt_QCoroNetwork.pri
 %{_prefix}/mkspecs/modules/qt_QCoroWebSockets.pri
+%{_prefix}/mkspecs/modules/qt_QCoroTest.pri
 %endif
 
 %if %{with qt6}
