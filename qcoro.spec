@@ -12,8 +12,8 @@
 %global oname QCoro
 
 Name: qcoro
-Version: 0.8.0
-Release: 2
+Version: 0.9.0
+Release: 1
 Group:   System/Libraries
 License: MIT
 Summary: C++ Coroutines for Qt
@@ -30,6 +30,7 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Quick)
 BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5WebSockets)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: qmake5
@@ -43,6 +44,7 @@ BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6Qml)
 BuildRequires: cmake(Qt6Network)
 BuildRequires: cmake(Qt6OpenGL)
+BuildRequires: cmake(Qt6Test)
 BuildRequires: cmake(Qt6WebSockets)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: qmake-qt6
@@ -153,6 +155,7 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro5Quick/
 %{_libdir}/cmake/QCoro5Network/
 %{_libdir}/cmake/QCoro5WebSockets/
+%{_libdir}/cmake/QCoro5Test/
 %{_libdir}/libQCoro5*.so
 %{_prefix}/mkspecs/modules/qt_QCoroCore.pri
 %{_prefix}/mkspecs/modules/qt_QCoroCoro.pri
@@ -180,5 +183,6 @@ CMAKE_BUILD_DIR=build-qt6 %cmake \
 %{_libdir}/cmake/QCoro6Quick/
 %{_libdir}/cmake/QCoro6Network/
 %{_libdir}/cmake/QCoro6WebSockets/
+%{_libdir}/cmake/QCoro6Test/
 %{_libdir}/libQCoro6*.so
 %endif
